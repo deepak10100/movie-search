@@ -64,7 +64,7 @@ try {
   return (
     <>
       <Container maxW={'container.xl'} p={4}>
-        <Heading textAlign={'center'} my={4} >Movie Search</Heading>
+        <Heading as={'h1'} textAlign={'center'} my={4} >Movie Search</Heading>
       <FormControl>
         <InputGroup>
         <Input type="text" value={search} onChange={onhangeHandler} placeholder="Search Movie..." />
@@ -82,19 +82,19 @@ try {
               <Image  objectFit={'cover'} src={item.poster_path} alt='Dan Abramov' />
             </CardHeader>
             <CardBody>
-              <Heading fontSize={'2xl'} >{item.title}</Heading>
-              <Text> {item.overview.slice(0,130)}....</Text>
+              <Heading as={'h2'} fontSize={'2xl'} >{item.title}</Heading>
+              <Text as={'p'}> {item.overview.slice(0,130)}....</Text>
             </CardBody>
             
           <Flex flexWrap={'wrap'} gap={2} p={2}>
           {
               item.genres.map((genre,i)=>(
-                <Badge key={i} px={2} borderRadius={'lg'} colorScheme='twitter' > {genre}</Badge>
+                <Badge as={'span'} key={i} px={2} borderRadius={'lg'} colorScheme='twitter' > {genre}</Badge>
               ))
             }
           </Flex>
             <CardFooter>
-            <Badge px={2} borderRadius={'lg'} colorScheme='whatsapp' > {item.release_date}</Badge>
+            <Badge as={'span'} px={2} borderRadius={'lg'} colorScheme='whatsapp' > {item.release_date}</Badge>
            
             </CardFooter>
           </Card>
